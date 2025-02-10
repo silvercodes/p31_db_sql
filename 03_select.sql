@@ -71,8 +71,135 @@ USE p31_company_db;
 --FROM employees;
 
 
-SELECT
-	last_name + ' ' + middle_name AS ФИО,
-	ISNULL(last_name, '') + ' ' + ISNULL(middle_name, '') AS ФИО,
-	CONCAT(last_name, ' ', middle_name) AS ФИО
-FROM employees;
+--SELECT
+--	last_name + ' ' + middle_name AS ФИО,
+--	ISNULL(last_name, '') + ' ' + ISNULL(middle_name, '') AS ФИО,
+--	CONCAT(last_name, ' ', middle_name) AS ФИО
+--FROM employees;
+
+
+
+--SELECT
+--	id,
+--	name,
+--	salary / 100 * bonus_percent AS Result_1,
+--	ISNULL(salary, 0) / 100 * ISNULL(bonus_percent, 0) AS Result_2,
+--	COALESCE(salary, 0) / 100 * COALESCE(bonus_percent, extra_percent, 0) AS Result_3
+--FROM employees;
+
+
+
+--=========================== ORDER BY =================================
+--SELECT
+--	last_name,
+--	first_name,
+--	salary
+--FROM employees
+--ORDER BY last_name DESC;	-- ASC(по возрастанию) DECS(по убыванию)
+
+
+
+--SELECT
+--	last_name,
+--	first_name,
+--	salary
+--FROM employees
+--ORDER BY salary, last_name DESC;
+
+
+
+--SELECT
+--	last_name,
+--	first_name
+--FROM employees
+--ORDER BY salary;
+
+
+
+
+-- Неоднозначность результата (одинаковая salary ???)
+--SELECT TOP 3
+--	id,
+--	last_name,
+--	first_name,
+--	salary
+--FROM employees
+--ORDER BY salary DESC
+
+
+
+
+-- Однозначность результата :-)
+--SELECT TOP 3
+--	id,
+--	last_name,
+--	first_name,
+--	salary
+--FROM employees
+--ORDER BY
+--	salary DESC,
+--	id DESC;
+
+
+
+
+--SELECT
+--	first_name,
+--	last_name
+--FROM employees
+--ORDER BY CONCAT(first_name, last_name)
+
+
+
+-- в ORDER BY можно использовать только поля из SELECT DISTINCT
+--SELECT DISTINCT
+--	last_name,
+--	first_name,
+--	salary
+--FROM employees
+--ORDER BY salary DESC
+
+
+
+
+--SELECT bonus_percent
+--FROM employees
+--ORDER BY bonus_percent;
+
+-- :-)))
+--SELECT bonus_percent
+--FROM employees
+--ORDER BY ISNULL(bonus_percent, 100);
+
+
+--======================== TOP ========================
+--SELECT TOP 2
+--	*
+--FROM employees;
+
+--SELECT TOP 25 PERCENT
+--	*
+--FROM employees;
+
+
+
+--SELECT TOP 2 WITH TIES
+--	id,
+--	first_name,
+--	last_name,
+--	salary
+--FROM employees
+--ORDER BY salary;
+
+
+
+-- Вывести 2 минимальных значения ЗП
+--SELECT DISTINCT TOP 2
+--	salary
+--FROM employees
+--ORDER BY salary;
+
+
+
+
+
