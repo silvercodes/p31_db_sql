@@ -27,8 +27,8 @@
 
 --==================== BETWEEN / IN / LIKE ========================
 
-SELECT id, name, salary
-FROM employees
+--SELECT id, name, salary
+--FROM employees
 
 -- WHERE salary >= 2000 AND salary <= 3000
 -- WHERE salary BETWEEN 2000 AND 3000;
@@ -51,4 +51,48 @@ FROM employees
 -- WHERE department_id IN (3, 4) OR department_id IS NULL			-- :-)))
 -- WHERE ISNULL(department_id, -1) IN (3, 4, -1)					-- :-)))
 
-WHERE department_id NOT IN (1) AND department_id IS NOT NULL;		-- :-)
+--WHERE department_id NOT IN (1) AND department_id IS NOT NULL;		-- :-)
+
+
+-- %	_	[abc]	[a-c]	[^a-c]
+
+--SELECT *
+--FROM employees
+
+-- WHERE last_name LIKE N'П%'
+-- WHERE last_name LIKE N'%ов'
+-- WHERE last_name LIKE N'%ре%'
+-- WHERE email LIKE '%.com'
+--WHERE email LIKE '%.c__'
+-- WHERE email LIKE '%.[cbr]__'
+-- WHERE email LIKE '%.[^a-c]__'
+-- WHERE LOWER(email) LIKE '%.c__'			-- :-)))
+
+-- WHERE LOWER(email) LIKE '!%_!_' ESCAPE '!'
+
+
+--SELECT *
+--FROM employees
+
+-- Которые родились в 1982 г
+-- WHERE YEAR(birthday) = 1982
+
+-- У которых сегодня день рождения
+-- WHERE MONTH(birthday) = MONTH(GETDATE()) AND DAY(birthday) = DAY(GETDATE())
+
+
+
+--DECLARE @d date = '20001223'
+--SELECT DATEDIFF(year, @d, GETDATE());
+
+
+-- declare @d date = DATEFROMPARTS(2000, 12, 23);
+
+
+-- SELECT CONVERT(DATE, '20001223', 104);
+
+
+
+
+
+
