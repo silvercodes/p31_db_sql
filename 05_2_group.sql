@@ -58,6 +58,25 @@
 -- Accounting      |
 -- IT              |
 -- ...
+
+--SELECT
+--    CASE
+--		WHEN department_id = 1 THEN 'Administration'
+--		WHEN department_id = 2 THEN 'Accounting'
+--		WHEN department_id = 3 THEN 'IT'
+--		ELSE 'NONE'
+--	END AS Departments,
+ 
+--	SUM(IIF(position_id = 1, salary, 0)) AS Bookers,
+--	SUM(IIF(position_id = 2, salary, 0)) AS Director,
+--	SUM(IIF(position_id = 3, salary, 0)) AS Developer,
+--	SUM(IIF(position_id = 4, salary, 0)) AS Teamlead,
+ 
+--	SUM(salary) AS SalarySum
+ 
+--FROM employees
+--GROUP BY department_id
+
 ---------------------------------------
 
 
