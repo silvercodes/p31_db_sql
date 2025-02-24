@@ -136,3 +136,12 @@
 --WHERE e.department_id = d.id
 
 
+
+
+--SELECT
+--	u.nickname,
+--	COUNT(a.id) [Count]
+--FROM albums a LEFT JOIN users u ON a.user_id = u.id
+--GROUP BY u.id, u.nickname
+--ORDER BY Count DESC;
+
